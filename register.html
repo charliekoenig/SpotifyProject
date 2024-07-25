@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+
+<head>
+
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <script src="https://kit.fontawesome.com/5dac05d3e4.js" crossorigin="anonymous"></script>
+
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            background-color: #A3CEF1;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #welcomeWindow {
+            position: relative;
+
+            width: 1000px;
+            height: 500px;
+
+            border: 4px solid #A3CEF1;
+            border-radius: 15px;
+
+            display: flex;
+            box-sizing: border-box;
+        }
+
+        .welcomeWindowBox {
+            width: 50%;
+            border: 4px solid #A3CEF1;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .logInBox {
+            border-top-left-radius: 10px;
+            border-bottom-left-radius: 10px;
+        }
+
+        #logInOpen {
+            display: flex;
+            flex-direction: column;
+            background-color: rgb(0, 68, 255);
+        }
+
+        #signInTitle {
+            display: flex;
+            justify-content: space-between;
+            font-size: 2em;
+            color: white;
+            margin-bottom: 20%;
+        }
+
+        #socialIcons {
+            width: 20%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .usernameContainer, #passwordContainer {
+            display: flex;
+            flex-direction: column;
+            margin: 0px 0px 25px 0px;
+            font-size: 1em;
+            color: white;
+        }
+
+        .usernameContainer input {
+            height: 40px;
+            outline: none;
+            padding: 10px;
+            border: none;
+            border-radius: 10px;
+            box-sizing: border-box;
+            font-size: .9em;
+            background-color: white;
+        }
+
+        #passwordInput {
+            background-color: white;
+
+            height: 40px;
+            border-radius: 10px;
+            box-sizing: border-box;
+            padding: 5px 8px 5px 10px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        #passwordInput input{
+            background-color: white;
+
+            height: 40px;
+            outline: none;
+            border: none;
+            border-radius: 10px;
+            box-sizing: border-box;
+            font-size: .9em;
+            width: 90%;
+        }
+
+        #logInButton {
+            margin-top: 10%;
+            width:100%;
+            background-color:white;
+            color: rgb(0, 68, 255);
+            height: 50px;
+            border-radius: 10px;
+            
+            font-size: 1.3em;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            box-sizing: border-box;
+        }
+
+
+        .clickable:hover {
+            cursor: pointer;
+        }
+
+        #forgotPassword {
+            margin-top: 10px;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            color: white;
+        }
+
+        #signUp {
+            position: absolute;
+            z-index: 1000;
+            right: 0;
+            top: 0;
+
+            height: 100%;
+
+            background-color: white;
+
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 10px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #signUpButton {
+            margin-top: 2.5%;
+            width: 65%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            text-align: center;
+
+            background-color: #A3CEF1;
+            font-size: 1.4em;
+            padding: 8px;
+            border-radius: 10px;
+            color: white;
+
+            box-sizing: border-box;
+        }
+
+        #registerWindow {
+            width: 600px;
+            height: 600px;
+            padding:20px;
+            box-sizing: border-box;
+            
+            border-radius: 15px;
+            background-color: rgb(0, 68, 255);
+
+            color:white;
+        }
+
+        #registerPage1, #registerPage2, #registerPage3 {
+            display: flex;
+            flex-direction: column;
+        }
+
+        #toggleRegisterWindow {
+            display: flex;
+            justify-content: flex-end;
+            align-items: flex-end;
+            height: 75px;
+        }
+
+        .regMenuButton {
+            padding: 6px 10px;
+            border-radius: 10px;
+            font-size: 1.2em;
+            background-color: white;
+            color: rgb(0, 68, 255);
+            box-sizing: border-box;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="registerWindow">
+        <div id="registerPage1">
+            <div style="font-size: 1.8em;">Welcome to OurWebsite!</div>
+            <div style="font-size: 1.1em; margin-top:10px;">Let's get you set up</div>
+
+            <!-- this needs to be a form -->
+            <form id="registerForm" method="POST" action="#">
+                <div class="usernameContainer" style="margin-top:8%; font-size:1.1em";>
+                    Enter your Email
+                    <input placeholder="" style="margin-top: 5px;">
+                </div>
+
+                <div id="passwordContainer" style="margin-top:8px; font-size:1.1em">
+                    Create a Password
+                    <div id="passwordInput" style="margin:5px 0px 10px 0px;">
+                        <input id="createPw" placeholder="" type="password">
+                        <i class="fa-solid fa-eye clickable" style="color: rgb(0, 68, 255);"></i>
+                    </div>
+                    Confirm Password
+                    <div id="passwordInput" style="margin-top: 5px;">
+                        <input id="confirmPw" placeholder="" type="password">
+                        <i class="fa-solid fa-eye clickable" style="color: rgb(0, 68, 255);"></i>
+                    </div>
+                </div>
+            </form>
+
+            <div class="usernameContainer" style="margin-top:8px; font-size:1.1em";>
+                Create a Username that will be displayed to friends and other users
+                <input placeholder="" style="margin-top: 5px;">
+            </div>
+        </div>
+
+        <div id="toggleRegisterWindow">
+            <div id="registerMenuButtons" style="display: flex; justify-content: space-between; align-items:center; width: 100%;">
+                <div style="display: flex; align-items: center;">
+                    <div id="backButton" class="clickable regMenuButton">Back</div>
+                    <div style="width:36px;">&nbsp;</div>
+                </div>
+                <div id="regIndex">
+                    <i class="fa-solid fa-circle"></i>
+                    <i class="fa-regular fa-circle"></i>
+                    <i class="fa-regular fa-circle"></i>
+                </div>
+                <div id="continueButton" class="clickable regMenuButton">Continue</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- <script src="getCodes.js"></script> -->
+    <script>
+        window.onload = async () => {
+        
+            /* codes should be stored in node (hidden from client) */
+            const clientId = "299bf32bfedd4f7ebf619a2d82f805bd";
+            const clientSecret = '8081378d9dba4d33ae233700f1073100';
+        
+            /* redirect URI subject to change */
+            const redirectUri = "http://localhost:8080/register";
+        
+            const authCode = (new URLSearchParams(window.location.search)).get('code');
+        
+            try {
+                data = await getTokens(clientId, clientSecret, redirectUri, authCode);
+        
+                if (data) {
+                    accessToken = data.access_token;
+                    refreshToken = data.refresh_token;
+                }
+            } catch (error) {
+                console.error('Error fetching tokens:', error);
+            } 
+        }
+    
+        async function getTokens(clientId, clientSecret, redirectUri, authCode) {
+            response = await fetch('https://accounts.spotify.com/api/token', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                    'Authorization': 'Basic ' + btoa(clientId + ':' + clientSecret),
+                },
+                body: new URLSearchParams({
+                    'grant_type': 'authorization_code',
+                    'code': authCode,
+                    'redirect_uri': redirectUri
+                })
+            });
+        
+            data = await response.json();
+        
+            console.log(data);
+            return data;
+        }
+    
+    </script>
+</body>

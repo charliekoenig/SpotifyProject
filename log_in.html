@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+
+<head>
+
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <script src="https://kit.fontawesome.com/5dac05d3e4.js" crossorigin="anonymous"></script>
+
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            background-color: #A3CEF1;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #welcomeWindow {
+            position: relative;
+
+            width: 1000px;
+            height: 500px;
+
+            border: 4px solid #A3CEF1;
+            border-radius: 15px;
+
+            display: flex;
+            box-sizing: border-box;
+        }
+
+        .welcomeWindowBox {
+            width: 50%;
+            border: 4px solid #A3CEF1;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .logInBox {
+            border-top-left-radius: 10px;
+            border-bottom-left-radius: 10px;
+        }
+
+        #logInOpen {
+            display: flex;
+            flex-direction: column;
+            background-color: rgb(0, 68, 255);
+        }
+
+        #signInTitle {
+            display: flex;
+            justify-content: space-between;
+            font-size: 2em;
+            color: white;
+            margin-bottom: 20%;
+        }
+
+        #socialIcons {
+            width: 20%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .usernameContainer, #passwordContainer {
+            display: flex;
+            flex-direction: column;
+            margin: 0px 0px 25px 0px;
+            font-size: 1em;
+            color: white;
+        }
+
+        .usernameContainer input {
+            height: 40px;
+            outline: none;
+            padding: 10px;
+            border: none;
+            border-radius: 10px;
+            box-sizing: border-box;
+            font-size: .9em;
+            background-color: white;
+        }
+
+        #passwordInput {
+            background-color: white;
+
+            height: 40px;
+            border-radius: 10px;
+            box-sizing: border-box;
+            padding: 5px 8px 5px 10px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        #passwordInput input{
+            background-color: white;
+
+            height: 40px;
+            outline: none;
+            border: none;
+            border-radius: 10px;
+            box-sizing: border-box;
+            font-size: .9em;
+            width: 90%;
+        }
+
+        #logInButton {
+            margin-top: 10%;
+            width:100%;
+            background-color:white;
+            color: rgb(0, 68, 255);
+            height: 50px;
+            border-radius: 10px;
+            
+            font-size: 1.3em;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            box-sizing: border-box;
+        }
+
+
+        .clickable:hover {
+            cursor: pointer;
+        }
+
+        #forgotPassword {
+            margin-top: 10px;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            color: white;
+        }
+
+        #signUp {
+            position: absolute;
+            z-index: 1000;
+            right: 0;
+            top: 0;
+
+            height: 100%;
+
+            background-color: white;
+
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 10px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #signUpButton {
+            margin-top: 2.5%;
+            width: 65%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            text-align: center;
+
+            background-color: #A3CEF1;
+            font-size: 1.4em;
+            padding: 8px;
+            border-radius: 10px;
+            color: white;
+
+            box-sizing: border-box;
+        }
+
+        #registerWindow {
+            width: 600px;
+            height: 600px;
+            padding:20px;
+            box-sizing: border-box;
+            
+            border-radius: 15px;
+            background-color: rgb(0, 68, 255);
+
+            color:white;
+        }
+
+        #registerPage1, #registerPage2, #registerPage3 {
+            display: flex;
+            flex-direction: column;
+        }
+
+        #toggleRegisterWindow {
+            display: flex;
+            justify-content: flex-end;
+            align-items: flex-end;
+            height: 75px;
+        }
+
+        .regMenuButton {
+            padding: 6px 10px;
+            border-radius: 10px;
+            font-size: 1.2em;
+            background-color: white;
+            color: rgb(0, 68, 255);
+            box-sizing: border-box;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="welcomeWindow">
+        <div id="logInOpen" class="welcomeWindowBox logInBox">
+            <div id="signInTitle">
+                Sign In
+                <div id="socialIcons">
+                    <i class="fa-brands fa-twitter clickable"></i>
+                    <i class="fa-brands fa-instagram clickable"></i>
+                </div>
+            </div>
+
+            <!-- Action should be a method in node to confirm username password -->
+            <form id="signInForm" method="post" action="#">
+                <div class="usernameContainer">
+                    USERNAME
+                    <input placeholder="" style="margin-top: 5px;">
+                </div>
+
+                <div id="passwordContainer">
+                    PASSWORD
+                    <div id="passwordInput" style="margin-top: 5px;">
+                        <input placeholder="" type="password">
+                        <i class="fa-solid fa-eye clickable" style="color: rgb(0, 68, 255);"></i>
+                    </div>
+                </div>
+
+                <div id="logInButton" class="clickable">Sign In</div>
+            </form>
+            <div id="forgotPassword" class="clickable">Forgot Password?</div>
+        </div>
+
+        <div id="signUp" class="welcomeWindowBox">
+            <div style="color:rgb(0, 68, 255); font-size: 2em; margin-bottom: 19%;">Welcome to OurWebsite</div>
+            <div style="color:rgb(0, 68, 255); font-size: 1em;">Don't have an account?</div>
+            <div id="signUpButton" class="clickable">
+                <div style="width:15%; display:flex; justify-content:center; align-items:center;">
+                    <i class="fa-brands fa-spotify" style="font-size:.9em; align-self:center; color:#1DB954"></i>
+                </div>
+                <div style="display: flex;">Sign Up with<div style="color: #1DB954;">&nbsp;Spotify</div></div>
+                <div style="width: 15%;">&nbsp</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- <script src="requestAuthorization.js"></script> -->
+     <script>
+        window.onload = () => {
+            document.getElementById('signUpButton').onclick = () => beginAuthorization();
+        }
+
+        function beginAuthorization() {
+            const clientId = "299bf32bfedd4f7ebf619a2d82f805bd";
+
+            // const redirectUri = "http://127.0.0.1:5500/register.html";
+            const redirectUri = "http://localhost:8080/register";
+
+            const scopes = 'user-modify-playback-state user-read-playback-state user-read-currently-playing user-read-recently-played';
+            
+            const url = `https://accounts.spotify.com/authorize?response_type=code&client_id=${clientId}&scope=${encodeURIComponent(scopes)}&redirect_uri=${encodeURIComponent(redirectUri)}`;
+
+            window.location.href = url;
+        }
+     </script>
+</body>
